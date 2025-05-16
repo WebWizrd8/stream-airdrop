@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { type Airdrop } from "../type";
+import { type Airdrop, type AirdropResponseItem } from "../type";
 import { getAllAirdrops } from "../service/api";
 
 interface AirdropContextType {
@@ -29,7 +29,7 @@ export const AirdropProvider: React.FC<AirdropProviderProps> = ({ children }) =>
         try {
             const data = await getAllAirdrops();
 
-            const formattedAirdrops: Airdrop[] = data.items.map((item: any) => ({
+            const formattedAirdrops: Airdrop[] = data.items.map((item: AirdropResponseItem) => ({
                 name: item.name,
                 address: item.address,
                 maxNumNodes: parseInt(item.maxNumNodes),

@@ -4,7 +4,7 @@ export const SOLANA_CLUSTER_URL = 'https://api.devnet.solana.com';
 
 export const getAllPayload = {
     "actor": "",
-    "limit": 30,
+    "limit": 1000,
     "offset": 0,
     "filters": {
       "include": {
